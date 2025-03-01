@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Namaste React</title>
+  </head>
+  <body>
+    <!-- <h1>Hello</h1> -->
+    <div id="root">
+      <!-- <h1>Hello World!</h1> -->
+    </div>
+    <!-- <script>
+      //Creating heading element
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Hello World!!";
+
+        //Finding root element
+        const root = document.getElementById("root");
+        root.appendChild(heading);
+    </script> -->
+
+    <!-- Adding react in our project by injecting script tags -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <!-- Writing React Code here using script tag & adding css styles -->
+    <!-- <script>
+      const heading = React.createElement("h1", { id: "heading" }, "Hello World!!");
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(heading);
+    </script>
+    <link rel="stylesheet" href="./index.css" /> -->
+
+    <!-- Creating Separate JS file for React Code -->
+    <script src="./App.js"></script>
+  </body>
+</html>
