@@ -1,81 +1,65 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/* <div id="parent">
-    <div id ="child">
-      <h1>I'm an h1 tag</h1>
-    </div>
-</div> */
+//React Element => React.createElement => Object => HTmlElement(render)
 
-// const parent = React.createElement(
-//   "div",
-//   { id: "parent" },
-//   React.createElement(
-//     "div",
-//     { id: "child" },
-//     React.createElement("h1", {}, "I'm an h1 tag")
-//   )
-// );
+//const heading = React.createElement("h1", { id: "heading" }, "Hello!!");
 
-/* <div id="parent">
-    <div id ="child">
-      <h1>I'm an h1 tag</h1>
-      <h2>I'm an h2 tag</h1>
-    </div>
-</div> */
+//JSX - is not HTML inside JS - It is HTMl like syntax or XML like syntax (using JSX)
+//JSX (transpiled before it is sent to the browser & parcel transpiles it which is done by babel)
+//JSX => React.createElement => React Elemnt - JS Object => HTmlElement(render) (Babel converts JSX to React.createElement)
 
-// const parent = React.createElement(
-//   "div",
-//   { id: "parent" },
-//   React.createElement(
-//     "div",
-//     { id: "child" },
-//     [
-//       React.createElement("h1", {}, "I'm an h1 tag"),
-//       React.createElement("h2", {}, "I'm an h2 tag")
-//     ]
-//   )
-// );
-
-/* <div id="parent">
-    <div id ="child">
-      <h1>I'm an h1 tag</h1>
-      <h2>I'm an h2 tag</h1>
-    </div>
-    <div id ="child2">
-      <h3>I'm an h3 tag</h3>
-      <h4>I'm an h4 tag</h4>
-    </div>
-</div> */
-
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  [
-  React.createElement(
-    "div",
-    { id: "child" },
-    [
-      React.createElement("h1", {}, "I'm an h1 tag"),
-      React.createElement("h2", {}, "I'm an h2 tag")
-    ]
-  ),
-  React.createElement(
-    "div",
-    { id: "child2" },
-    [
-      React.createElement("h3", {}, "I'm an h3 tag"),
-      React.createElement("h4", {}, "I'm an h4 tag")
-    ]
-  )
-  ]
+const Title = () => {
+  return <h1>Title!!</h1>;
+};
+//React functional component
+const HeadingComponent = () => {
+  return <h1>Hello!!</h1>;
+};
+//OR
+const HeadingComponent2 = () => (
+  <div>
+    <h1>Hello!!</h1>
+  </div>
 );
 
+//Component Composition
+const HeadingComponent3 = () => {
+  return (
+    <div>
+      <Title />
+      <HeadingComponent />
+    </div>
+  );
+};
+
+//Adding JS expressions inside JSX
+const name = "ReactJS";
+const HeadingComponent4 = () => {
+  return (
+    <div>
+      <h1>Hello {name}!!</h1>
+      <h2>Welcome to {name} world!!</h2>
+    </div>
+  );
+};
+
+//Adding JS elements inside JSX
+const title = <h1>Title!!</h1>;
+
+const HeadingComponent5 = () => {
+    return (
+        <div>
+        {title}
+        <h2>Welcome to ReactJS world!!</h2>
+        </div>
+    );
+}
+
+const jsxHeading = <h1 id="heading">Hello!!</h1>;
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
 
-/* <h1 id="heading">Hello World!</h1> */
-// const heading = React.createElement("h1", { id: "heading" }, "Hello World!");
+//root.render(jsxHeading);
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
+root.render(<HeadingComponent5 />);
