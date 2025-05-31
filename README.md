@@ -19,3 +19,22 @@
 - Https
 - Tree Shaking - removes unused code {extra random code / unwanted method which is not used}
 - Different dev & prod bundles
+
+# Food Ordering App
+
+/**
+ * Header
+ * - Logo
+ * - Nav Items
+ * Body
+ * - Search
+ * - Restaurant Container
+ *   - Restaurant Card
+ *     - Image
+ *     - Name, Rating, Cuisine, Delivery Time
+ * Footer
+ * - Copyright
+ * - Links
+ * - Address
+ * - Contact
+ */
